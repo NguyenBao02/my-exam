@@ -8,12 +8,17 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import Homepage from './component/Homepage/hompage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [ 
+    children: [
+      {
+        index: true,
+        element: <Homepage />,
+      },
       {
         path: "/admin",
         element: <Admin />,
@@ -23,14 +28,6 @@ const router = createBrowserRouter([
         element: <User />,
       },
     ]
-  },
-  {
-    path: "/admin",
-    element: <Admin />,
-  },
-  {
-    path: "/user",
-    element: <User />,
   },
 ]);
 

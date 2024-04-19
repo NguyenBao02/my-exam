@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -17,6 +18,23 @@ const ModalCreateUser = (props) => {
     const handleUpLoadPreview = (event) => {
         setPreview(URL.createObjectURL(event.target.files[0]));
     }
+
+    const handleCreateUser = () => {
+        let payload = {
+            email,
+            password,
+            username,
+            role,
+            img: preview,
+        };
+
+        axios
+            .post('http://127.0.0.1:8000/api/admin/participant/create', payload)
+            .then((res) => {
+                console.log(res.data);
+            })
+    };
+
     return (
         <>
             <Button variant="primary" onClick={() => handleShow()}>
@@ -71,7 +89,7 @@ const ModalCreateUser = (props) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={() => handleCreateUser()}>
                         Save
                     </Button>
                 </Modal.Footer>

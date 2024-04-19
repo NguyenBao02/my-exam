@@ -2,7 +2,6 @@ import ModalCreateUser from "./modalCreateUser";
 import './content.scss';
 
 const ManagerUser = (props) => {
-    var abc = 'cba';
     return (
         <div className="maneger-user-container">
             <div className="title">
@@ -10,7 +9,7 @@ const ManagerUser = (props) => {
             </div>
             <div className="users-content">
                 <div>
-                    <ModalCreateUser abc={abc} />
+                    <ModalCreateUser />
                     <div>Table</div>
                 </div>
             </div>

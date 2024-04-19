@@ -11,6 +11,7 @@ import {
 import { FaTachometerAlt, FaGem, FaReact, FaStickyNote } from "react-icons/fa";
 import sidebarBg from "../../assets/background/bg2.png";
 import "./admin.scss";
+import { Link } from "react-router-dom";
 
 const SideBar = ({ collapsed, toggled, handleToggleSidebar }) => {
   return (
@@ -35,18 +36,22 @@ const SideBar = ({ collapsed, toggled, handleToggleSidebar }) => {
               whiteSpace: "nowrap",
             }}
           >
-            <FaReact className="spinner" size={"3em"} color="#0ff" />
+            <FaReact size={"3em"} color="#0ff" />
             <span className="fs-6 ms-2">PRACTICE</span>
           </div>
         </SidebarHeader>
 
         <SidebarContent>
           <Menu iconShape="circle">
-            <MenuItem icon={<FaTachometerAlt />}>Dashboard</MenuItem>
+            <Link to={'/admin'}>
+              <MenuItem icon={<FaTachometerAlt />}>Dashboard</MenuItem>
+            </Link>
           </Menu>
           <Menu iconShape="circle">
             <SubMenu title={"Features"} icon={<FaGem />}>
-              <MenuItem>Quản Lý User</MenuItem>
+              <Link to={'/admin/manager-user'}>
+                <MenuItem>Quản Lý User</MenuItem>
+              </Link>
               <MenuItem>Quản Lý Bài Quiz</MenuItem>
               <MenuItem>Quản Lý Câu Hỏi</MenuItem>
             </SubMenu>
@@ -61,7 +66,7 @@ const SideBar = ({ collapsed, toggled, handleToggleSidebar }) => {
             }}
           >
             <a
-              href="https://github.com/NguyenBao02/demo-react"
+              href="https://github.com/NguyenBao02/my-exam"
               target="_blank"
               className="sidebar-btn"
               rel="noopener noreferrer"

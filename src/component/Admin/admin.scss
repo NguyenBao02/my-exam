@@ -34,3 +34,15 @@
           }
     }
 }
+
+.admin-content {
+  width: 100%;
+  .admin-header {
+    border: 1px solid green;
+    height: 30px;
+  }
+  
+  .admin-main {
+    border: 1px solid red;
+  }
+}

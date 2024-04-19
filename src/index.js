@@ -7,8 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Homepage from './component/Homepage/hompage';
+import ManagerUser from './component/Admin/Content/managerUser';
+import Dashboard from './component/Admin/Content/dashboard';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,16 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+    children: [
+      {
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "/admin/manager-user",
+        element: <ManagerUser />,
+      },
+    ]
   },
 ]);
 
@@ -35,7 +47,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     {/* <React.StrictMode> */}
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
     {/* </React.StrictMode> */}
   </Provider>
 );

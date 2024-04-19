@@ -2,7 +2,7 @@ import videoHomePage from '../../assets/video/video-homepage.mp4'
 
 const Homepage = (props) => {
     return (
-        <div className='homepage-container container'>
+        <div className='homepage-container container py-5'>
             <div className='row'>
                 <div className='homepage-video col-lg-6 d-flex'>
                     <video className='container-fluid rounded' autoPlay muted loop>

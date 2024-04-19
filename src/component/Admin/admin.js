@@ -1,9 +1,20 @@
-const Admin = (props) => {
-    return (
-        <div>
-            This is Admin page
-        </div>
-    );
-}
+import { FaList } from "react-icons/fa";
+import SideBar from "./sidebar";
+import { useState } from "react";
 
-export default Admin
+const Admin = (props) => {
+  const [collapsed, setCollapsed] = useState(false);
+  return (
+    <div className="admin-container d-flex">
+      <div className="admin-sidebar">
+        <SideBar collapsed={collapsed} />
+      </div>
+      <div className="admin-content">
+        <FaList onClick={() => setCollapsed(!collapsed)} />
+        Bảo
+      </div>
+    </div>
+  );
+};
+
+export default Admin;

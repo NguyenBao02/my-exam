@@ -9,23 +9,27 @@ body {
 }
 
 .app-container {
-  .header-container {
-    .navbar {
-      z-index: 100;
-      .nav-link {
-        &.active {
-          color: #00bfff;
+  .main-container {
+    .content-container {
+      .homepage-content {
+        .homepage-content-title {
+          font-size: 70px;
+          line-height: 1;
+        }
+
+        .homepage-content-text {
+          font-size: 20px;
+          line-height: 1.4;
         }
       }
     }
   }
 }
 
-video {
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  outline: none;
-  border: none;
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1500px!important;
+  }
 }
+
+

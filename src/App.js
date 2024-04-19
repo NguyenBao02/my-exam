@@ -9,12 +9,12 @@ const App = () => {
         <Header />
       </div>
 
-      <div className='main-container'>
+      <div className='main-container py-5'>
         <div className='navbar-container'>
 
         </div>
 
-        <div className='app-container'>
+        <div className='content-container'>
           <Outlet />
         </div>
       </div>
